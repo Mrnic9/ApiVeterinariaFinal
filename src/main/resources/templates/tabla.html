@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Registros</title>
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+body {
+    background-image:url(https://img.freepik.com/vector-premium/patron-transparente-blanco-patas-verdes_197792-622.jpg?w=740);
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 63px;
+    background: green;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    margin-right: 10px;
+}
+
+.container{
+width: 50%;
+
+min-width: 600px;
+background:green;
+margin: auto;
+margin-top: 50px;
+padding: 20px;
+color: white;
+
+
+}
+
+
+
+.navbar a {
+    display: block;
+    padding: 20px 20px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    background: #e91e63;
+}
+</style>
+<body>
+
+<div class="head">
+    <nav class="navbar">
+        <a href="inicio">Inicio</a>
+        <a href="new">Registro propietarios</a>
+        <a href="newmas">consulta mascota</a>
+
+
+
+    </nav>
+</div>
+
+
+<h3 id="Color-letra" class="centrar">REPORTE VEHICULAR</h3>
+<div class="container">
+    <table class="table table-dark table-striped" border="2">
+        <thead>
+        <div class="centrar">
+            <tr>
+                <th class="centrar">ID</th>
+                <th class="centrar">PROPIETARIO</th>
+                <th class="centrar">TELEFONO</th>
+                <th class="centrar">UBICACION</th>
+                <th></th>
+            </tr>
+        </div>
+
+        </thead>
+        <tbody>
+        <tr th:each="persona:${personas}" class="centrar">
+            <td th:text="${persona.id}"></td>
+            <td th:text="${persona.nameper}"></td>
+            <td th:text="${persona.telefono}"></td>
+            <td th:text="${persona.ubicacion}"></td>
+
+            <td class="centrar">
+                <a th:href="@{/editar/}+${persona.id}"  class="btn btn-warning">EDITAR</a>
+                <a th:href="@{/eliminar/}+${persona.id}" class="btn btn-danger">BORRAR</a>
+                <a th:href="@{/listarmas/}" class="btn btn-warning">DIAGNOSTICO</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+*{
+padding: o;
+margin: 0;
+box-sizing: border-box;
+font-family: 'Times New Roman', Times, serif;
+
+}
+html{
+
+    font-size: 62.5%;
+}
+
+body{
+font-size: 1.9rem;
+background:url(https://img.freepik.com/vector-premium/patron-transparente-blanco-patas-verdes_197792-622.jpg?w=740) ;
+background-attachment: fixed;
+
+
+
+}
+
+.contenedor{
+width: 50%;
+
+min-width: 600px;
+background:green;
+margin: auto;
+margin-top: 50px;
+padding: 20px;
+color: white;
+}
+h1{
+text-align: center;
+padding-bottom: 16px;
+
+
+}
+.Form_input{
+width: 100%;
+height: 40px;
+padding: 10px;
+outline: none;
+border: none;
+border-bottom: 2px solid ;
+margin-bottom: 15px;
+color: white;
+
+
+
+}
+.Form_tex{
+width: 100%;
+padding: 10px;
+outline: none;
+border: none;
+border-bottom: 2px solid ;
+}
+.Form_tex::placeholder{
+
+    font-size: 1.8rem;
+    color:black ;
+}
+.Form_label{
+
+    font-size: 1.9rem;
+    
+}
+.Inicio{
+
+    width: 30%;
+    height: 50px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    font-size: 1.8rem;
+     
+    
+
+}
+.Enviar {
+width: 30%;
+height: 50px;
+padding: 10px;
+outline: none;
+border: none;
+font-size: 1.8rem;
+
+}
+.Imprimir{
+width: 30%;
+height: 50px;
+padding: 10px;
+outline: none;
+border: none;
+font-size: 1.8rem;
+}

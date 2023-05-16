@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Consulta</title>
+    
+</head>
+<style>
+    *{
+padding: o;
+margin: 0;
+box-sizing: border-box;
+font-family: 'Times New Roman', Times, serif;
+
+}
+html{
+
+    font-size: 62.5%;
+}
+
+body{
+font-size: 1.9rem;
+background:url(https://img.freepik.com/vector-premium/patron-transparente-blanco-patas-verdes_197792-622.jpg?w=740) ;
+background-attachment: fixed;
+
+
+
+}
+
+.contenedor{
+width: 50%;
+
+min-width: 600px;
+background:green;
+margin: auto;
+margin-top: 50px;
+padding: 20px;
+color: white;
+}
+h1{
+text-align: center;
+padding-bottom: 16px;
+
+
+}
+.Form-control{
+width: 100%;
+height: 40px;
+padding: 10px;
+outline: none;
+border: none;
+border-bottom: 2px solid ;
+margin-bottom: 15px;
+color: black;
+
+
+
+}
+.Form_tex{
+width: 100%;
+padding: 10px;
+outline: none;
+border: none;
+border-bottom: 2px solid ;
+}
+.Form_tex::placeholder{
+
+    font-size: 1.8rem;
+    color:black ;
+}
+.Form_label{
+
+    font-size: 1.9rem;
+
+}
+.Inicio{
+
+    width: 30%;
+    height: 50px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    font-size: 1.8rem;
+
+
+
+}
+.Enviar {
+width: 30%;
+height: 50px;
+padding: 10px;
+outline: none;
+border: none;
+font-size: 1.8rem;
+
+}
+.Imprimir{
+width: 30%;
+height: 50px;
+padding: 10px;
+outline: none;
+border: none;
+font-size: 1.8rem;
+}
+
+
+</style>
+<body>
+   <div class="contenedor">
+    <form th:action="@{/savemas/}" th:object="${mascota}" method="POST">
+<header class="header">
+    <h1>F<span>ormulario de consulta</span></h1>
+</header>
+
+
+<label  class="Form_label">Nombre de la mascota:</label>
+<input th:field="*{nameMas}" type="text" class="Form-control" >
+
+<label class="Form_label">Tipo de mascota:</label>
+<input   th:field="*{especie}"  type="text" class="Form-control" >
+
+<label  class="Form_label">Raza:</label>
+<input th:field="*{razaMas}" type="text" class="Form-control" >
+
+<label class="Form_label"> Color :</label>
+<input th:field="*{colorMas}" type="text" class="Form-control" >
+
+<label class="Form_label"> Edad :</label>
+<input th:field="*{edad}" type="text" class="Form-control">
+
+<label  class="Form_label"> Peso :</label>
+<input th:field="*{pesoMas}" type="text" class="Form-control" >
+
+<label for="sintomas" class="Form_label"> Sintomas:</label>
+<textarea th:field="*{nameMas}" class="Form_tex"  name="sintomas" id="sintomas" cols="30" rows="10" placeholder="Escriba los sintomas"></textarea>
+
+<label for="diagnostico" class="Form_label"> Diagnostico y recomendaciones:</label>
+<textarea th:field="*{nameMas}" class="Form_tex"  name="diagnostico" id="diagnostico" cols="30" rows="10" placeholder="Escriba el diagnostico y recomendaciones al paciente"></textarea>
+
+<input th:field="@{/iniciomas/}" type="submit" class="Inicio" value="Inicio">
+<input  th:field="@{/savemas/}+${mascota.id}"  type="submit" class="Enviar" value="Enviar ">
+<input type="submit" class="Imprimir" value="Imprimir consulta">
+
+    </form>
+
+
+
+   </div>
+   
+</body>
+</html>
