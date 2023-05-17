@@ -1,4 +1,6 @@
 package com.example.ApiVeterinaria.Service;
+
+
 import com.example.ApiVeterinaria.Modelos.Persona;
 import com.example.ApiVeterinaria.Repository.IPersona;
 import com.example.ApiVeterinaria.RepositoryService.IPersonaService;
@@ -19,7 +21,7 @@ public class PersonaService implements IPersonaService {
     public List<Persona> listar(){return (List<Persona>) data.findAll();}
 
     @Override
-    public Optional<Persona> listarId(Long id){
+    public Optional<Persona> listarId(int id){
         return data.findById(id);
     }
 
@@ -34,5 +36,5 @@ public class PersonaService implements IPersonaService {
     }
 
     @Override
-    public void delete(Long id){data.deleteById(id);}
+    public void delete( int id){data.deleteById(id);}
 }

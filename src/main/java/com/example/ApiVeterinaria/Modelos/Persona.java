@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Long id;
+    private  int id;
 
     private String nameper;
     private long telefono;

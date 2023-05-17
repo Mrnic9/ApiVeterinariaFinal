@@ -1,5 +1,6 @@
 package com.example.ApiVeterinaria.Controller;
 
+
 import com.example.ApiVeterinaria.Modelos.Persona;
 import com.example.ApiVeterinaria.RepositoryService.IPersonaService;
 import org.jetbrains.annotations.NotNull;
@@ -49,14 +50,14 @@ public class PersonaController {
     }
 
     @GetMapping("/editar/{id}")
-    public String editar(@PathVariable Long id,  Model model){
+    public String editar(@PathVariable int id,  Model model){
         Optional<Persona> persona = service.listarId(id);
         model.addAttribute("persona", persona);
-        return "redirect:/new";
+        return "form";
     }
 
     @GetMapping("/eliminar/{id}")
-    public String delete(@PathVariable Long id){
+    public String delete(@PathVariable int id){
         service.delete(id);
         return "redirect:/listar";
     }

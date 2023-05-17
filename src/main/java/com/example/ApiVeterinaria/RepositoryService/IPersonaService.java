@@ -11,9 +11,12 @@ import java.util.Optional;
 public interface IPersonaService {
     public List<Persona> listar();
 
-    public Optional<Persona> listarId(Long id);
+    public Optional<Persona> listarId(int id);
+
+
+
 
     public int save (Persona p);
 
-    public void delete (Long id);
+    public void delete (int id);
 }
