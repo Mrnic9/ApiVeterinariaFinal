@@ -47,22 +47,14 @@ public class MascotaController {
         model.addAttribute("mascota", new Mascota());
         return "consulta";
     }
-    @GetMapping("/newcitas")
-    public String agregarcitas( Model model){
-        model.addAttribute("mascota", new Mascota());
-        return "citas";
-    }
-    @GetMapping("/newcitapelu")
+
+    @GetMapping("/newcita")
     public String agregarcitaspelu( Model model){
         model.addAttribute("mascota", new Mascota());
-        return "PeluqueriaCan";
+        return "Citas";
     }
 
-    @GetMapping("/newcitamed")
-    public String agregarcitamed( Model model){
-        model.addAttribute("mascota", new Mascota());
-        return "CitaMedicaCan";
-    }
+
     @GetMapping("/iniciomas")
     public String inicio(){
         return "index";
@@ -74,16 +66,12 @@ public class MascotaController {
         service.save(M);
         return "redirect:/listarmas";
     }
-    @PostMapping("/savecitaspelu")
+    @PostMapping("/savecitas")
     public String savecitas(@Validated Mascota M){
         service.save(M);
         return "redirect:/listarcitas";
     }
-    @PostMapping("/savecitasmed")
-    public String savecitasmed(@Validated Mascota M){
-        service.save(M);
-        return "redirect:/listarcitas";
-    }
+
 
     @GetMapping("/editarmas/{id}")
     public String editar(@PathVariable int id,  Model model){
@@ -95,7 +83,7 @@ public class MascotaController {
     public String editarcitaspelu(@PathVariable int id,  Model model){
         Optional<Mascota> mascota = service.listarId(id);
         model.addAttribute("mascota", mascota);
-        return "PeluqueriaCan";
+        return "Citas";
     }
 
     @GetMapping("/eliminarmas/{id}")

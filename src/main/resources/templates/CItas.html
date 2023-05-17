@@ -39,7 +39,7 @@ body {
 }
 
 .navbar a:hover {
-  background: green;
+  background: #e91e63;
 }
 
 form {
@@ -120,17 +120,19 @@ input[type=submit]:hover {
 <body>
 <div class="head">
   <nav class="navbar">
-    <a href="index.html">Inicio</a>
-    <a href="form.html">Registro propietarios</a>
-    <a href="consulta.html">consulta </a>
-    <a href="Citas.html">Tipo de cita</a>
+    <a href="iniciomas">Inicio</a>
+    <a href=new>Registro</a>
+    <a href=newmas>Consulta</a>
+    <a href=newcita>Registrar cita</a>
+    <a href=listarcitas>Citas</a>
+
 
   </nav>
 
 </div>
 <div class="contenedor">
-  <form th:action="@{/savecitaspelu/}" th:object="${mascota}" method="POST">
-<h1>Peluquería Canina</h1>
+  <form th:action="@{/savecitas/}" th:object="${mascota}" method="POST">
+<h1>Agendar Cita</h1>
     <label for="id">ID:</label>
     <input th:field="*{idmas}" type="text" id="id" name="id" >
   <label for="nombre">Nombre de la mascota:</label>
@@ -144,6 +146,9 @@ input[type=submit]:hover {
       <option value="Corte de Pelo">Corte de Pelo</option>
       <option value="Baño y Secado">Baño y Secado</option>
       <option value="Corte de Uñas">Corte de Uñas</option>
+      <option value="Vacunación">Vacunación</option>
+      <option value="Consulta">Consulta</option>
+      <option value="Cirugía">Cirugía</option>
     </select>
     <label for="fecha">Fecha del Servicio:</label>
     <input th:field="*{fecha}" type="date" id="fecha" name="fecha">
