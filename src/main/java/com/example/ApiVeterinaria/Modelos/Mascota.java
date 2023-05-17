@@ -24,5 +24,10 @@ public class Mascota {
     private String colorMas;
     private String pesoMas;
     private int edad;
+    private String fecha;
+    private  String hora;
+    private String servicio;
+    private  String sintomas;
+    private String diagnostico;
 }
 

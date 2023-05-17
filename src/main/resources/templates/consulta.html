@@ -128,7 +128,9 @@ border-bottom: 2px solid ;
 <body>
 <div class="head">
     <nav class="navbar">
-        <a href="inicio">Inicio</a>
+        <a href="iniciomas">Inicio</a>
+        <a href="new">Registro propietarios</a>
+        <a href="newcitas">Tipo de cita</a>
 
     </nav>
 </div>
@@ -162,10 +164,10 @@ border-bottom: 2px solid ;
 <input th:field="*{pesoMas}" type="text" class="Form-control" >
 
 <label for="sintomas" class="Form_label"> Sintomas:</label>
-<textarea th:field="*{nameMas}" class="Form_tex"  name="sintomas" id="sintomas" cols="30" rows="10" placeholder="Escriba los sintomas"></textarea>
+<textarea th:field="*{sintomas}" class="Form_tex"  name="sintomas" id="sintomas" cols="30" rows="10" placeholder="Escriba los sintomas"></textarea>
 
 <label for="diagnostico" class="Form_label"> Diagnostico y recomendaciones:</label>
-<textarea th:field="*{nameMas}" class="Form_tex"  name="diagnostico" id="diagnostico" cols="30" rows="10" placeholder="Escriba el diagnostico y recomendaciones al paciente"></textarea>
+<textarea th:field="*{diagnostico}" class="Form_tex"  name="diagnostico" id="diagnostico" cols="30" rows="10" placeholder="Escriba el diagnostico y recomendaciones al paciente"></textarea>
 
 <div class="d-grid gap-2">
 <input   type="submit" class="btn btn-success" value="guardar ">

@@ -28,6 +28,12 @@ public class MascotaController {
         model.addAttribute("mascotas", mascotas);
         return "tablaMas";
     }
+    @GetMapping("/listarcitas")
+    public String listarcitas(Model model){
+        List<Mascota> mascotas= service.listar();
+        model.addAttribute("mascotas", mascotas);
+        return "ListaCitas";
+    }
 
     @GetMapping( "/formmas")
     public String form(Model model){
@@ -41,7 +47,22 @@ public class MascotaController {
         model.addAttribute("mascota", new Mascota());
         return "consulta";
     }
+    @GetMapping("/newcitas")
+    public String agregarcitas( Model model){
+        model.addAttribute("mascota", new Mascota());
+        return "citas";
+    }
+    @GetMapping("/newcitapelu")
+    public String agregarcitaspelu( Model model){
+        model.addAttribute("mascota", new Mascota());
+        return "PeluqueriaCan";
+    }
 
+    @GetMapping("/newcitamed")
+    public String agregarcitamed( Model model){
+        model.addAttribute("mascota", new Mascota());
+        return "CitaMedicaCan";
+    }
     @GetMapping("/iniciomas")
     public String inicio(){
         return "index";
@@ -53,6 +74,11 @@ public class MascotaController {
         service.save(M);
         return "redirect:/listarmas";
     }
+    @PostMapping("/savecitas")
+    public String savecitas(@Validated Mascota M){
+        service.save(M);
+        return "redirect:/listarcitas";
+    }
 
     @GetMapping("/editarmas/{id}")
     public String editar(@PathVariable int id,  Model model){
@@ -60,10 +86,21 @@ public class MascotaController {
         model.addAttribute("mascota", mascota);
         return "consulta";
     }
+    @GetMapping("/editarcitaspelu/{id}")
+    public String editarcitaspelu(@PathVariable int id,  Model model){
+        Optional<Mascota> mascota = service.listarId(id);
+        model.addAttribute("mascota", mascota);
+        return "PeluqueriaCan";
+    }
 
     @GetMapping("/eliminarmas/{id}")
     public String delete(@PathVariable int id){
         service.delete(id);
         return "redirect:/listarmas";
+    }
+    @GetMapping("/eliminarcitas/{id}")
+    public String deletecitaspelu(@PathVariable int id){
+        service.delete(id);
+        return "redirect:/listarcitas";
     }
 }

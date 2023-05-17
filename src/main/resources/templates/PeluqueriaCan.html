@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="https://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Peluquería Canina</title>
@@ -10,6 +10,34 @@
         background-color: #F6F6F6;
         font-family: Arial, sans-serif;
       }
+      .navbar {
+    display: flex;
+    margin-right: 10px;
+}
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 63px;
+    background: green;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar a {
+    display: block;
+    padding: 20px 20px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    background: green;
+}
+
       form {
         margin: 0 auto;
         max-width: 500px;
@@ -71,26 +99,40 @@
   </style>
 </head>
 <body>
+<div class="head">
+  <nav class="navbar">
+    <a href="index.html">Inicio</a>
+    <a href="form.html">Registro propietarios</a>
+    <a href="consulta.html">consulta </a>
+    <a href="Citas.html">Tipo de cita</a>
+
+  </nav>
+
+</div>
+<div class="contenedor">
+  <form th:action="@{/savecitas/}" th:object="${mascota}" method="POST">
 <h1>Peluquería Canina</h1>
-<form>
   <label for="nombre">Nombre de la mascota:</label>
-  <input type="text" id="nombre" name="nombre" required>
+  <input th:field="*{nameMas}" type="text" id="nombre" name="nombre" required>
   <label for="raza">Raza:</label>
-  <input type="text" id="raza" name="raza" required>
+  <input th:field="*{razaMas}" type="text" id="raza" name="raza" required>
   <div class="form-row">
     <label for="servicio">Tipo de Servicio:</label>
-    <select id="servicio" name="servicio" required>
+    <select th:field="*{servicio}"id="servicio" name="servicio" required>
       <option value="">Seleccionar</option>
       <option value="Corte de Pelo">Corte de Pelo</option>
       <option value="Baño y Secado">Baño y Secado</option>
       <option value="Corte de Uñas">Corte de Uñas</option>
     </select>
     <label for="fecha">Fecha del Servicio:</label>
-    <input type="date" id="fecha" name="fecha" required>
+    <input th:field="*{fecha}" type="date" id="fecha" name="fecha" required>
     <label for="hora">Hora:</label>
-    <input type="time" id="hora" name="hora" min="07:00" max="18:00" required>
+    <input th:field="*{hora}"type="time" id="hora" name="hora" min="07:00" max="18:00" required>
   </div>
-  <input type="submit" value="Agendar Cita">
+    <div class="d-grid gap-2">
+      <input   type="submit" class="btn btn-success" value="Guardar ">
+    </div>
 </form>
+</div>
 </body>
 </html>

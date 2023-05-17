@@ -1,19 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="es" xmlns:th="https://www.thymeleaf.org">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <title>Seleccionar Servicio</title>
     <style>
         body {
   background-image:url(https://img.freepik.com/vector-premium/patron-transparente-blanco-patas-verdes_197792-622.jpg?w=740);
   text-align: center;
   font-family: sans-serif;
+}.navbar {
+    display: flex;
+    margin-right: 10px;
 }
-
 .container {
   margin: 0 auto;
   max-width: 800px;
   text-align: center;
 }
+
+.navbar a {
+    display: block;
+    padding: 20px 20px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    background: green;
+}
+
+
 
 h1 {
   color: white;
@@ -53,12 +75,12 @@ h1 {
 <div class="container">
     <h1>Seleccionar Servicio</h1>
     <div class="servicios">
-        <a href="PeluqueriaCan.html">
+        <a href="newcitapelu">
             <div class="servicio-peluqueria">
                 <h2>Servicio de peluqueria canina</h2>
             </div>
         </a>
-        <a href="CitaMedicaCan.html">
+        <a href="newcitamed">
             <div class="servicio-cita">
                 <h2>Cita medica canina</h2>
             </div>
