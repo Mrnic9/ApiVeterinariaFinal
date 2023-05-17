@@ -74,8 +74,13 @@ public class MascotaController {
         service.save(M);
         return "redirect:/listarmas";
     }
-    @PostMapping("/savecitas")
+    @PostMapping("/savecitaspelu")
     public String savecitas(@Validated Mascota M){
+        service.save(M);
+        return "redirect:/listarcitas";
+    }
+    @PostMapping("/savecitasmed")
+    public String savecitasmed(@Validated Mascota M){
         service.save(M);
         return "redirect:/listarcitas";
     }

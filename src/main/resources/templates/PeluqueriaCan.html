@@ -110,27 +110,29 @@
 
 </div>
 <div class="contenedor">
-  <form th:action="@{/savecitas/}" th:object="${mascota}" method="POST">
+  <form th:action="@{/savecitaspelu/}" th:object="${mascota}" method="POST">
 <h1>Peluquería Canina</h1>
+    <label for="id">ID:</label>
+    <input th:field="*{idmas}" type="text" id="id" name="id" >
   <label for="nombre">Nombre de la mascota:</label>
-  <input th:field="*{nameMas}" type="text" id="nombre" name="nombre" required>
+  <input th:field="*{nameMas}" type="text" id="nombre" name="nombre" >
   <label for="raza">Raza:</label>
-  <input th:field="*{razaMas}" type="text" id="raza" name="raza" required>
+  <input th:field="*{razaMas}" type="text" id="raza" name="raza" >
   <div class="form-row">
     <label for="servicio">Tipo de Servicio:</label>
-    <select th:field="*{servicio}"id="servicio" name="servicio" required>
+    <select th:field="*{servicio}"id="servicio" name="servicio" >
       <option value="">Seleccionar</option>
       <option value="Corte de Pelo">Corte de Pelo</option>
       <option value="Baño y Secado">Baño y Secado</option>
       <option value="Corte de Uñas">Corte de Uñas</option>
     </select>
     <label for="fecha">Fecha del Servicio:</label>
-    <input th:field="*{fecha}" type="date" id="fecha" name="fecha" required>
+    <input th:field="*{fecha}" type="date" id="fecha" name="fecha">
     <label for="hora">Hora:</label>
-    <input th:field="*{hora}"type="time" id="hora" name="hora" min="07:00" max="18:00" required>
+    <input th:field="*{hora}"type="time" id="hora" name="hora" min="07:00" max="18:00" >
   </div>
     <div class="d-grid gap-2">
-      <input   type="submit" class="btn btn-success" value="Guardar ">
+      <input   type="submit" class="btn btn-success" value="guardar ">
     </div>
 </form>
 </div>

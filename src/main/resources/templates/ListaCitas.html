@@ -92,6 +92,7 @@ color: white;
       <tr>
         <th class="centrar">ID</th>
         <th class="centrar">Nombre de la mascota</th>
+        <th class="centrar">Raza</th>
         <th class="centrar">Fecha de la cita</th>
         <th class="centrar">Hora de la cita</th>
         <th class="centrar">tipo de cita</th>
@@ -105,6 +106,7 @@ color: white;
     <tr th:each="mascota:${mascotas}" class="centrar">
       <td th:text="${mascota.idmas}"></td>
       <td th:text="${mascota.nameMas}"></td>
+      <td th:text="${mascota.razaMas}"></td>
       <td th:text="${mascota.fecha}"></td>
       <td th:text="${mascota.hora}"></td>
       <td th:text="${mascota.servicio}"></td>

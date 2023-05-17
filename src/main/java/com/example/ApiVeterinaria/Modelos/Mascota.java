@@ -19,6 +19,7 @@ public class Mascota {
     private  int idmas;
 
     private String nameMas;
+
     private  String razaMas;
     private String especie;
     private String colorMas;
