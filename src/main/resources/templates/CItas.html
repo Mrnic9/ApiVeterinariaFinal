@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Peluquería Canina</title>
+  <style>
+body {
+  background-image: url(https://img.freepik.com/vector-premium/patron-transparente-blanco-patas-verdes_197792-622.jpg?w=740);
+  text-align: center;
+  background-color: #F6F6F6;
+  font-family: Arial, sans-serif;
+}
+
+.head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 63px;
+  background: green;
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;
+  margin-right: 10px;
+}
+
+.navbar a {
+  display: block;
+  padding: 20px 20px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.navbar a:hover {
+  background: #e91e63;
+}
+
+form {
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 20px;
+  border: 1px solid #CCCCCC;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 10px #CCCCCC;
+  margin-top: 100px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  color: white;
+  background: green;
+  padding: 10px;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #666666;
+  text-align: left;
+}
+
+input[type=text],
+select,
+input[type=date],
+input[type=time] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #4CAF50;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #666666;
+}
+
+input[type=submit] {
+  background-color: green;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  width: 100%;
+  min-width: 600px;
+  background: black;
+  margin: auto;
+  margin-top: 250px;
+  padding: 20px;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+  </style>
+</head>
+<body>
+<div class="head">
+  <nav class="navbar">
+    <a href="iniciomas">Inicio</a>
+    <a href=new>Registro</a>
+    <a href=newmas>Consulta</a>
+    <a href=newcita>Registrar cita</a>
+    <a href=listarcitas>Citas</a>
+
+
+  </nav>
+
+</div>
+<div class="contenedor">
+  <form th:action="@{/savecitas/}" th:object="${mascota}" method="POST">
+<h1>Agendar Cita</h1>
+    <label for="id">ID:</label>
+    <input th:field="*{idmas}" type="text" id="id" name="id" >
+  <label for="nombre">Nombre de la mascota:</label>
+  <input th:field="*{nameMas}" type="text" id="nombre" name="nombre" >
+  <label for="raza">Raza:</label>
+  <input th:field="*{razaMas}" type="text" id="raza" name="raza" >
+  <div class="form-row">
+    <label for="servicio">Tipo de Servicio:</label>
+    <select th:field="*{servicio}"id="servicio" name="servicio" >
+      <option value="">Seleccionar</option>
+      <option value="Corte de Pelo">Corte de Pelo</option>
+      <option value="Baño y Secado">Baño y Secado</option>
+      <option value="Corte de Uñas">Corte de Uñas</option>
+      <option value="Vacunación">Vacunación</option>
+      <option value="Consulta">Consulta</option>
+      <option value="Cirugía">Cirugía</option>
+    </select>
+    <label for="fecha">Fecha del Servicio:</label>
+    <input th:field="*{fecha}" type="date" id="fecha" name="fecha">
+    <label for="hora">Hora:</label>
+    <input th:field="*{hora}"type="time" id="hora" name="hora" min="07:00" max="18:00" >
+  </div>
+    <div class="d-grid gap-2">
+      <input   type="submit" class="btn btn-success" value="guardar ">
+    </div>
+</form>
+</div>
+</body>
+</html>

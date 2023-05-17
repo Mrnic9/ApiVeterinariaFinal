@@ -9,15 +9,16 @@
     <title>Registros</title>
 </head>
 <style>
-    * {
+* {
     margin: 0;
     padding: 0;
     border: 0;
     font-size: 100%;
     vertical-align: baseline;
 }
+
 body {
-    background-image:url(https://img.freepik.com/vector-premium/patron-transparente-blanco-patas-verdes_197792-622.jpg?w=740);
+    background-image: url(https://img.freepik.com/vector-premium/patron-transparente-blanco-patas-verdes_197792-622.jpg?w=740);
     text-align: center;
     font-family: sans-serif;
 }
@@ -38,20 +39,17 @@ body {
     margin-right: 10px;
 }
 
-.container{
-width: 50%;
-
-min-width: 600px;
-background:green;
-margin: auto;
-margin-top: 50px;
-padding: 20px;
-color: white;
-
-
+.container {
+    width: 60%;
+    min-width: 600px;
+    background: white;
+    margin: auto;
+    margin-top: 100px;
+    padding: 20px;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-
 
 .navbar a {
     display: block;
@@ -65,11 +63,73 @@ color: white;
 .navbar a:hover {
     background: #e91e63;
 }
+
+h3#Color-letra {
+    color: white;
+    margin-bottom: 30px;
+}
+
+table.table {
+    margin: auto;
+    width: 100%;
+}
+
+table.table th,
+table.table td {
+    padding: 10px;
+    text-align: center;
+}
+
+table.table th {
+    background-color: green;
+    color: white;
+}
+
+table.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.centrar {
+    text-align: center;
+}
+
+.btn {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.btn-outline-warning {
+    background-color: transparent;
+    color: #ffc107;
+    border: 2px solid #ffc107;
+}
+
+.btn-outline-warning:hover {
+    background-color: #ffc107;
+    color: white;
+}
+
+.btn-outline-danger {
+    background-color: transparent;
+    color: #dc3545;
+    border: 2px solid #dc3545;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+}
 </style>
 <body>
 
 <div class="head">
     <nav class="navbar">
+        <a href="inicio">Inicio</a>
         <a href="new">Registro</a>
         <a href="newmas">consulta</a>
 
@@ -84,6 +144,7 @@ color: white;
         <thead>
         <div class="centrar">
             <tr>
+                <th class="centrar">ID</th>
                 <th class="centrar">Nombre</th>
                 <th class="centrar">Especie</th>
                 <th class="centrar">Raza</th>
@@ -99,17 +160,19 @@ color: white;
         </thead>
         <tbody>
         <tr th:each="mascota:${mascotas}" class="centrar">
-            <td th:text="${mascota.id}"></td>
+            <td th:text="${mascota.idmas}"></td>
             <td th:text="${mascota.nameMas}"></td>
             <td th:text="${mascota.especie}"></td>
             <td th:text="${mascota.razaMas}"></td>
             <td th:text="${mascota.colorMas}"></td>
             <td th:text="${mascota.edad}"></td>
             <td th:text="${mascota.pesoMas}"></td>
+            <td th:text="${mascota.sintomas}"></td>
+            <td th:text="${mascota.diagnostico}"></td>
 
             <td class="centrar">
-                <a th:href="@{/editarmas/}+${mascota.id}"  class="btn btn-outline-warning">EDITAR</a>
-                <a th:href="@{/eliminarmas/}+${mascota.id}" class="btn btn-outline-danger">BORRAR</a>
+                <a th:href="@{/editarmas/}+${mascota.idmas}"  class="btn btn-outline-warning">EDITAR</a>
+                <a th:href="@{/eliminarmas/}+${mascota.idmas}" class="btn btn-outline-danger">BORRAR</a>
 
             </td>
         </tr>

@@ -9,71 +9,107 @@
   <title>Ingreso de usuarios</title>
 </head>
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    vertical-align: baseline;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
 }
+
 body {
-    background-image:url(https://img.freepik.com/vector-premium/patron-transparente-blanco-patas-verdes_197792-622.jpg?w=740);
-    text-align: center;
-    font-family: sans-serif;
+  background-image: url(https://img.freepik.com/vector-premium/patron-transparente-blanco-patas-verdes_197792-622.jpg?w=740);
+  text-align: center;
+  font-family: sans-serif;
 }
 
 .head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 63px;
-    background: green;
-    position: fixed;
-    width: 100%;
-    z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 63px;
+  background: green;
+  position: fixed;
+  top: 0; /* Se fija en la parte superior */
+  width: 100%;
+  z-index: 100;
 }
 
 .navbar {
-    display: flex;
-    margin-right: 10px;
+  display: flex;
+  margin-right: 10px;
 }
 
-.container{
-width: 50%;
-
-min-width: 600px;
-background:green;
-margin: auto;
-margin-top: 50px;
-padding: 20px;
-color: white;
-
-
+.container {
+  width: 50%;
+  min-width: 600px;
+  background: green;
+  margin: 200px auto 0;
+  padding: 20px;
+  color: white;
 }
-
-
 
 .navbar a {
-    display: block;
-    padding: 20px 20px;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 20px;
+  display: block;
+  padding: 20px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
 }
 
 .navbar a:hover {
-    background: #e91e63;
+  background: #e91e63;
 }
 
+.text-info-emphasis {
+  color: white;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.d-grid {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
 </style>
 <body>
-
+<div class="head">
+  <nav class="navbar">
+    <a href="inicio">Inicio</a>
+    <a href="newmas">consulta </a>
+  </nav>
+</div>
 
 
 
 <div class="container">
-  <form th:action="@{/saveper}" th:object="${persona}" method="POST">
+  <form th:action="@{/saveper}" th:object="${persona}" method="POST" >
     <div>
       <div>
         <div class="centrar" id="Color-letra">
@@ -81,6 +117,12 @@ color: white;
         </div>
         <div class="centrar">
           <div>
+
+            <label id="Color-letra" class="text-info-emphasis">ID</label>
+            <input th:field="*{id}" type="text" class="form-control">
+          </div>
+          <div>
+
             <label id="Color-letra" class="text-info-emphasis">PROPIETARIO</label>
             <input th:field="*{nameper}" type="text" class="form-control">
           </div>
@@ -94,14 +136,12 @@ color: white;
           </div>
         </div>
         <div class="d-grid gap-2">
-          <input th:field="@{/saveper/}+${persona.id}"  type="submit" value="Guardar" class="btn btn-success">
+          <input type="submit" value="Guardar" class="btn btn-success">
         </div>
       </div>
     </div>
   </form>
 </div>
-
-
 
 </body>
 </html>
