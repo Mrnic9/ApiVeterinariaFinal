@@ -55,14 +55,14 @@ public class MascotaController {
     }
 
     @GetMapping("/editarmas/{id}")
-    public String editar(@PathVariable Long id,  Model model){
+    public String editar(@PathVariable int id,  Model model){
         Optional<Mascota> mascota = service.listarId(id);
         model.addAttribute("mascota", mascota);
-        return "redirect:/newmas";
+        return "consulta";
     }
 
     @GetMapping("/eliminarmas/{id}")
-    public String delete(@PathVariable Long id){
+    public String delete(@PathVariable int id){
         service.delete(id);
         return "redirect:/listarmas";
     }

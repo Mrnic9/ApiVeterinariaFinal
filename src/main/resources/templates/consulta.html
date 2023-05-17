@@ -13,23 +13,40 @@
     *{
 padding: o;
 margin: 0;
-box-sizing: border-box;
-font-family: 'Times New Roman', Times, serif;
+box-sizing: 0;
+font-size: 100%;
+ vertical-align: baseline;
+
 
 }
-html{
 
-    font-size: 62.5%;
-}
 
 body{
-font-size: 1.9rem;
+
 background:url(https://img.freepik.com/vector-premium/patron-transparente-blanco-patas-verdes_197792-622.jpg?w=740) ;
-background-attachment: fixed;
+    font-family: sans-serif;
+ text-align: center;
 
 
 
 }
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 63px;
+    background: green;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+.navbar {
+    display: flex;
+    margin-right: 10px;
+}
+
+
+
 
 .contenedor{
 width: 50%;
@@ -41,6 +58,20 @@ margin-top: 50px;
 padding: 20px;
 color: white;
 }
+.navbar a {
+    display: block;
+    padding: 20px 20px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    background: green;
+}
+
+
 h1{
 text-align: center;
 padding-bottom: 16px;
@@ -77,7 +108,7 @@ border-bottom: 2px solid ;
     font-size: 1.9rem;
 
 }
-.Inicio{
+.d-grid gap-2{
 
     width: 30%;
     height: 50px;
@@ -88,34 +119,29 @@ border-bottom: 2px solid ;
 
 
 
-}
-.Enviar {
-width: 30%;
-height: 50px;
-padding: 10px;
-outline: none;
-border: none;
-font-size: 1.8rem;
 
-}
-.Imprimir{
-width: 30%;
-height: 50px;
-padding: 10px;
-outline: none;
-border: none;
-font-size: 1.8rem;
-}
+
+
 
 
 </style>
 <body>
+<div class="head">
+    <nav class="navbar">
+        <a href="inicio">Inicio</a>
+
+    </nav>
+</div>
+
+
    <div class="contenedor">
     <form th:action="@{/savemas/}" th:object="${mascota}" method="POST">
-<header class="header">
-    <h1>F<span>ormulario de consulta</span></h1>
-</header>
 
+    <h1>F<span>ormulario de consulta</span></h1>
+
+
+        <label  class="Form_label">ID</label>
+        <input th:field="*{idmas}" type="text" class="Form-control" >
 
 <label  class="Form_label">Nombre de la mascota:</label>
 <input th:field="*{nameMas}" type="text" class="Form-control" >
@@ -141,9 +167,9 @@ font-size: 1.8rem;
 <label for="diagnostico" class="Form_label"> Diagnostico y recomendaciones:</label>
 <textarea th:field="*{nameMas}" class="Form_tex"  name="diagnostico" id="diagnostico" cols="30" rows="10" placeholder="Escriba el diagnostico y recomendaciones al paciente"></textarea>
 
-<input th:field="@{/iniciomas/}" type="submit" class="Inicio" value="Inicio">
-<input  th:field="@{/savemas/}+${mascota.id}"  type="submit" class="Enviar" value="Enviar ">
-<input type="submit" class="Imprimir" value="Imprimir consulta">
+<div class="d-grid gap-2">
+<input   type="submit" class="btn btn-success" value="guardar ">
+</div>
 
     </form>
 

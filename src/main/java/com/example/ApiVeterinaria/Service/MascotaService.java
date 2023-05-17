@@ -20,7 +20,7 @@ public class MascotaService implements IMascotaService {
     public List<Mascota> listar(){return (List<Mascota>) data.findAll();}
 
     @Override
-    public Optional<Mascota> listarId(Long id){
+    public Optional<Mascota> listarId(int id){
         return data.findById(id);
     }
 
@@ -35,5 +35,5 @@ public class MascotaService implements IMascotaService {
     }
 
     @Override
-    public void delete(Long id){data.deleteById(id);}
+    public void delete(int id){data.deleteById(id);}
 }

@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class Mascota {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Long id;
+    private  int idmas;
 
     private String nameMas;
     private  String razaMas;

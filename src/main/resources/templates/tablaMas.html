@@ -70,6 +70,7 @@ color: white;
 
 <div class="head">
     <nav class="navbar">
+        <a href="inicio">Inicio</a>
         <a href="new">Registro</a>
         <a href="newmas">consulta</a>
 
@@ -99,7 +100,7 @@ color: white;
         </thead>
         <tbody>
         <tr th:each="mascota:${mascotas}" class="centrar">
-            <td th:text="${mascota.id}"></td>
+            <td th:text="${mascota.idmas}"></td>
             <td th:text="${mascota.nameMas}"></td>
             <td th:text="${mascota.especie}"></td>
             <td th:text="${mascota.razaMas}"></td>
@@ -108,8 +109,8 @@ color: white;
             <td th:text="${mascota.pesoMas}"></td>
 
             <td class="centrar">
-                <a th:href="@{/editarmas/}+${mascota.id}"  class="btn btn-outline-warning">EDITAR</a>
-                <a th:href="@{/eliminarmas/}+${mascota.id}" class="btn btn-outline-danger">BORRAR</a>
+                <a th:href="@{/editarmas/}+${mascota.idmas}"  class="btn btn-outline-warning">EDITAR</a>
+                <a th:href="@{/eliminarmas/}+${mascota.idmas}" class="btn btn-outline-danger">BORRAR</a>
 
             </td>
         </tr>

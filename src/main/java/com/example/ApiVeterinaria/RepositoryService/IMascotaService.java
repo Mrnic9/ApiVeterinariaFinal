@@ -12,9 +12,9 @@ import java.util.Optional;
 public interface IMascotaService {
     public List<Mascota> listar();
 
-    public Optional<Mascota> listarId(Long id);
+    public Optional<Mascota> listarId(int id);
 
     public int save (Mascota M);
 
-    public void delete (Long id);
+    public void delete (int id);
 }
