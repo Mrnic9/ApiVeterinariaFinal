@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Lista de Citas</title>
+  <style>
+    body {
+  background-image:url(https://img.freepik.com/vector-premium/patron-transparente-blanco-patas-verdes_197792-622.jpg?w=740);
+  text-align: center;
+  font-family: sans-serif;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+  background: green;
+}
+
+table {
+  border-collapse: collapse;
+  margin: auto;
+}
+
+th, td {
+  border: 1px solid #63c9a9;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: green;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.editar, .borrar {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.editar:hover, .borrar:hover {
+  background-color: #green;
+}
+
+.editar:focus, .borrar:focus {
+  outline: none;
+}
+
+.editar:active, .borrar:active {
+  background-color: black;
+}
+
+  </style>
+</head>
+<body>
+<h1>Lista de Citas</h1>
+<div class="citas">
+  <table>
+    <tr>
+      <th>Servicio</th>
+      <th>Nombre de Mascota</th>
+      <th>Fecha de la cita</th>
+      <th>Hora de la cita</th>
+      <th>Tipo de cita</th>
+      <th>Acciones</th>
+    </tr>
+    <tr>
+      <td>Peluquería canina</td>
+      <td>Lola</td>
+      <td>20/05/2023</td>
+      <td>10:00 AM</td>
+      <td>peluqueria</td>
+      <td>
+        <button class="editar">Editar</button>
+        <button class="borrar">Borrar</button>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

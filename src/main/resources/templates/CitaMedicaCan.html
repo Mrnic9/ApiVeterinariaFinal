@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cita Médica Canina</title>
+  <style>
+    body {
+        background-image:url(https://img.freepik.com/vector-premium/patron-transparente-blanco-patas-verdes_197792-622.jpg?w=740);
+        text-align: center;
+        background-color: #F6F6F6;
+        font-family: Arial, sans-serif;
+      }
+      form {
+        margin: 0 auto;
+        max-width: 500px;
+        padding: 20px;
+        border: 1px solid #CCCCCC;
+        border-radius: 10px;
+        background-color: #FFFFFF;
+        box-shadow: 0px 0px 10px #CCCCCC;
+      }
+      h1 {
+        color: white;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 50px;
+        background: green;
+      }
+      label {
+        display: block;
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #666666;
+      }
+      input[type=text], select, input[type=date], input[type=time] {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid #4CAF50;
+        border-radius: 4px;
+        font-size: 16px;
+        color: #666666;
+      }
+      input[type=submit] {
+        background-color: green;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 30px;
+        margin-bottom: 20px;
+      }
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+  </style>
+</head>
+<body>
+<h1>Cita Médica Canina</h1>
+<form>
+  <label for="nombre">Nombre de la Mascota:</label>
+  <input type="text" id="nombre" name="nombre" required>
+
+  <label for="raza">Raza:</label>
+  <input type="text" id="raza" name="raza" required>
+
+  <label for="edad">Edad:</label>
+  <input type="text" id="edad" name="edad" required>
+
+  <label for="servicio">Tipo de Servicio:</label>
+  <select id="servicio" name="servicio" required>
+    <option value="">Seleccionar</option>
+    <option value="Vacunación">Vacunación</option>
+    <option value="Consulta">Consulta</option>
+    <option value="Cirugía">Cirugía</option>
+  </select>
+
+  <label for="fecha">Fecha de la Cita:</label>
+  <input type="date" id="fecha" name="fecha" required>
+
+  <label for="hora">Hora de la Cita:</label>
+  <input type="time" id="hora" name="hora" min="07:00" max="18:00" required>
+
+  <input type="submit" value="Agendar Cita">
+</form>
+</body>
+</html>
